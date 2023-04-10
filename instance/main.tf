@@ -22,7 +22,7 @@ resource "aws_instance" "bastion" {
   user_data = base64encode(file("user_data.sh"))
   subnet_id                   = var.subnet_id
   instance_type               = var.instance_type
-  vpc_security_group_ids      = [aws_security_group.bastion_sg.id]
+  vpc_security_group_ids      = ["${aws_security_group.bastion_sg.id}"]
   associate_public_ip_address = true
 
   tags = {
