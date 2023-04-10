@@ -3,5 +3,5 @@ output "public_ip" {
 }
 
 output "sg_id" {
-  value = aws_security_group.bastion-sg
+  value = aws_security_group.bastion-sg.id
 }
