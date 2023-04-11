@@ -29,3 +29,7 @@ variable "database_master_user" {
 variable "security_groups" {
   
 }
+
+variable "vpc_cidr" {
+  
+}
