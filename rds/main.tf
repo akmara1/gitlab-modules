@@ -8,6 +8,7 @@ resource "aws_security_group" "db_sg" {
         to_port = var.db_port
         protocol = "tcp"
         security_groups = [var.security_groups]
+        cidr_blocks      = [var.vpc_cidr]
     }
 
     egress {

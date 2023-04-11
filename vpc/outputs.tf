@@ -10,3 +10,7 @@ output "subnets_public" {
   value       = aws_subnet.public[*].id
   description = "ids of public subnets"
 }
+
+output "vpc_cidr" {
+  value = aws_vpc.vpc.cidr_block
+}
