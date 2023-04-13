@@ -191,3 +191,7 @@ resource "aws_security_group_rule" "nodes_cluster_inbound" {
   to_port                  = 65535
   type                     = "ingress"
 }
+
+output "cluster_name" {
+  value = aws_eks_cluster.this.name
+}
