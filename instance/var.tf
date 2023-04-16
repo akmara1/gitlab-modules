@@ -17,3 +17,7 @@ variable "project" {
 variable "vpc_id" {
   
 }
+
+variable "key_pair" {
+  
+}
