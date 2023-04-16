@@ -62,7 +62,7 @@ resource "aws_security_group_rule" "cluster_inbound" {
   from_port                = 443
   protocol                 = "tcp"
   security_group_id        = aws_security_group.eks_cluster.id
-  source = "0.0.0.0/0"
+  cidr_blocks = ["0.0.0.0/0"]
   to_port                  = 443
   type                     = "ingress"
 }
