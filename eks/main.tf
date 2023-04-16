@@ -62,17 +62,7 @@ resource "aws_security_group_rule" "cluster_inbound" {
   from_port                = 443
   protocol                 = "tcp"
   security_group_id        = aws_security_group.eks_cluster.id
-  source_security_group_id = aws_security_group.eks_nodes.id
-  to_port                  = 443
-  type                     = "ingress"
-}
-
-resource "aws_security_group_rule" "cluster_inbound2" {
-  description              = "Allow worker nodes to communicate with the cluster API Server"
-  from_port                = 443
-  protocol                 = "tcp"
-  security_group_id        = aws_security_group.eks_cluster.id
-  source_security_group_id = var.bastion_sg
+  source = "0.0.0.0/0"
   to_port                  = 443
   type                     = "ingress"
 }
@@ -204,4 +194,8 @@ resource "aws_security_group_rule" "nodes_cluster_inbound" {
 
 output "cluster_name" {
   value = aws_eks_cluster.this.name
+}
+
+output "cluster_sg" {
+  value = aws_security_group.eks_cluster.id
 }
