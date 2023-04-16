@@ -23,6 +23,9 @@ variable "node_groups" {
   description = "map which contains node_group name desired_capacity, max_size and min_size"
 }
 
+variable "bastion_sg" {
+  
+}
 locals {
   node_groups = {
     for x in var.node_groups :
