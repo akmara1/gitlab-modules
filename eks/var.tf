@@ -23,9 +23,9 @@ variable "node_groups" {
   description = "map which contains node_group name desired_capacity, max_size and min_size"
 }
 
-locals {
-  node_groups = {
-    for x in var.node_groups :
-    "${x.max_size}/${x.min_size}" => x
-  }
-}
+# locals {
+#   node_groups = {
+#     for x in var.node_groups :
+#     "${x.max_size}/${x.min_size}" => x
+#   }
+# }
