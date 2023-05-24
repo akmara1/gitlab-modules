@@ -79,7 +79,7 @@ resource "aws_security_group_rule" "cluster_outbound" {
 
 # EKS Node Groups
 resource "aws_eks_node_group" "this" {
-  for_each        = local.node_groups
+  for_each        = var.node_groups
   cluster_name    = aws_eks_cluster.this.name
   node_group_name = "${var.project}-${each.value.node_group_name}"
   node_role_arn   = aws_iam_role.node.arn
