@@ -18,6 +18,6 @@ variable "vpc_id" {
   
 }
 
-variable "key_pair" {
+# variable "key_pair" {
   
-}
+# }
