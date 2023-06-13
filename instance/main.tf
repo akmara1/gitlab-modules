@@ -19,12 +19,12 @@ resource "aws_security_group" "bastion-sg" {
 
 resource "aws_instance" "bastion" {
   ami = var.ami
-  user_data = base64encode(file("./user_data.tpl"))
+#   user_data = base64encode(file("./user_data.tpl"))
   subnet_id                   = var.subnet_id
   instance_type               = var.instance_type
   vpc_security_group_ids      = [aws_security_group.bastion-sg.id]
   associate_public_ip_address = true
-  key_name = var.key_pair
+#   key_name = var.key_pair
 
   tags = {
     "environment" = "${var.project}"
